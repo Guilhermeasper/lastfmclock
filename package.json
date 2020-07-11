@@ -1,0 +1,26 @@
+{
+  "name": "lastfm-artist-time",
+  "version": "1.0.0",
+  "description": "Let you discorver how much time did you spend listening to a artist or album",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilhermeasper/lastfm-artist-time.git"
+  },
+  "keywords": [
+    "lastfm",
+    "artist",
+    "time",
+    "spend",
+    "album"
+  ],
+  "author": "Guilherme Afonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guilhermeasper/lastfm-artist-time/issues"
+  },
+  "homepage": "https://github.com/Guilhermeasper/lastfm-artist-time#readme"
+}

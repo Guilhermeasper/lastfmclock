@@ -1,0 +1,50 @@
+<ion-app>
+    <ion-header [translucent]="true">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>{{ title }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-row class="ion-align-items-start">
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Nome do usuário</ion-label>
+                    <ion-input type="text" [(ngModel)]="user"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Nome do artista</ion-label>
+                    <ion-input type="text" [(ngModel)]="artist"></ion-input>
+                </ion-item>
+                <ion-button (click)="calcular()" expand="block"
+                    >Calcular</ion-button
+                >
+                <ion-progress-bar [value]="lastfmService.andamento|async"></ion-progress-bar>
+            </ion-col>
+            <ion-col>
+                <ion-card *ngIf="busca">
+                    <ion-card-header>
+                        <ion-card-subtitle>{{ user }}</ion-card-subtitle>
+                        <ion-card-title *ngIf="!playcount"
+                            ><h5>você nunca ouviu</h5> {{ artist }}</ion-card-title
+                        >
+                        <ion-card-title *ngIf="playcount"
+                            >você já ouviu {{ artist }} {{playcount}} vezes.</ion-card-title
+                        >
+                    </ion-card-header>
+                    <ion-card-content id="cardcontent">
+                        <span *ngIf="segundos > 0 || minutos > 0 || horas > 0 || dias > 0">Isso é o equivalente a </span>
+                        <span *ngIf="dias">{{dias}} dias</span>
+                        <span *ngIf="horas"> e {{horas}} horas</span>
+                        <span *ngIf="minutos"> e {{minutos}} minutos</span>
+                        <span *ngIf="segundos"> e {{segundos}} segundos</span>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col class="ion-align-self-end"> </ion-col>
+            <ion-col> </ion-col>
+        </ion-row>
+    </ion-content>
+</ion-app>

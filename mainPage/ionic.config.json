@@ -1,0 +1,6 @@
+{
+  "name": "mainPage",
+  "integrations": {},
+  "type": "angular",
+  "port": 8080
+}
