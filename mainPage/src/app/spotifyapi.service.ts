@@ -12,6 +12,7 @@ export class SpotifyapiService {
     public requestOptionsGET: RequestInit;
     private _token: string;
     constructor() {
+        // Change the token after Basic to a base64 of your clientID from spotify API
         this.myHeadersPOST.append(
             "Authorization",
             "Basic NTFiMzA2MTVhNTlhNDNlMjkyMmZhMGE5NGU1MTIxNjA6ZmY0MTY4MmM4YzViNGRmMGI2ZTU4MGNlNzE4Mjc3Y2Y="
